@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mariage Nina & Sam</title>
+<meta property="og:title" content="Mariage N&amp;S 💍">
+<meta property="og:description" content="Houppa le 13 Décembre 2026 à 13h · Salons Hoche, Paris · Suivi d'un cocktail déjeunatoire">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samzeitoun30-coder.github.io/mariage-ns/">
+<meta property="og:image" content="https://samzeitoun30-coder.github.io/mariage-ns/apercu-mariage.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mariage N&amp;S 💍, monogramme N/S">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mariage N&amp;S 💍">
+<meta name="twitter:description" content="Houppa le 13 Décembre 2026 à 13h · Salons Hoche, Paris">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&family=Pinyon+Script&display=swap');
+  :root{
+    --cream:#fdfcf9;
+    --paper:#ffffff;
+    --ink:#17140f;
+    --gold:#c9a646;
+    --gold-light:#e8d9af;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Cormorant Garamond', Georgia, serif;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+  }
+  .mono{font-family:'Montserrat', sans-serif; letter-spacing:.14em; text-transform:uppercase;}
+  .serif-title{font-family:'Playfair Display', serif;}
+  .script{font-family:'Pinyon Script', cursive; font-weight:400;}
+
+  /* ---------- COVER ---------- */
+  #cover{
+    position:fixed; inset:0; z-index:50;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+    background:linear-gradient(160deg, #2a241c 0%, #17140f 60%, #0d0b08 100%);
+    background-size:cover; background-position:center 30%;
+    text-align:center; color:#fff; padding:60px 24px 56px;
+    transition:opacity .8s ease, visibility .8s ease;
+  }
+  #cover:target{opacity:0; visibility:hidden; pointer-events:none;}
+  #cover::before{content:''; position:absolute; inset:26px; border:1px solid rgba(201,166,70,.55); pointer-events:none;}
+  #cover::after{content:''; position:absolute; inset:38px; border:1px solid rgba(201,166,70,.28); pointer-events:none;}
+  #cover .cover-monogram{width:96px; height:96px; margin-bottom:16px; opacity:.92;}
+  #cover .names{font-family:'Pinyon Script', cursive; font-size:4.6rem; line-height:1; margin-bottom:10px; text-shadow:0 2px 18px rgba(0,0,0,.4);}
+  #cover .sub{font-family:'Montserrat',sans-serif; letter-spacing:.3em; text-transform:uppercase; font-size:.75rem; opacity:.9; margin-bottom:34px;}
+  #openBtn{
+    font-family:'Montserrat',sans-serif; letter-spacing:.2em; text-transform:uppercase; font-size:.72rem;
+    background:transparent; color:#fff; border:1px solid rgba(255,255,255,.8); padding:14px 34px; cursor:pointer;
+    transition:background .3s ease; touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+    position:relative; z-index:5; display:inline-block; text-decoration:none;
+  }
+  #openBtn:hover{background:rgba(255,255,255,.15);}
+
+  /* ---------- MUSIC TOGGLE ---------- */
+  #musicPanel{
+    position:fixed; top:68px; right:18px; z-index:60; width:min(320px, calc(100% - 36px));
+    padding:10px; border-radius:12px; background:var(--ink); color:var(--gold-light);
+  }
+  #musicPanel[aria-hidden="true"]{clip-path:inset(100%); pointer-events:none;}
+  #musicPanel iframe{display:block; width:100%; border:0;}
+  #musicPanel a{display:block; color:inherit; text-align:center; margin-top:6px;}
+  #musicToggle{
+    position:fixed; top:18px; right:18px; z-index:60;
+    width:42px; height:42px; border-radius:50%;
+    background:rgba(44,36,29,.55); color:#fff; border:1px solid rgba(255,255,255,.5);
+    font-size:16px; cursor:pointer; backdrop-filter:blur(4px);
+    display:flex; align-items:center; justify-content:center;
+  }
+  #musicToggle:hover{background:rgba(44,36,29,.8);}
+
+  /* ---------- ORNATE FRAME ---------- */
+  .card{
+    max-width:640px; margin:48px auto; padding:70px 36px;
+    background:var(--paper);
+    position:relative;
+    box-shadow:0 10px 40px rgba(44,36,29,.12);
+  }
+  .card::before{
+    content:''; position:absolute; inset:14px; border:1px solid var(--gold); pointer-events:none;
+  }
+  .card::after{
+    content:''; position:absolute; inset:19px; border:1px solid var(--gold); opacity:.5; pointer-events:none;
+  }
+  .corner{position:absolute; width:110px; height:110px; opacity:.95;}
+  .corner.tl{top:0; left:0;}
+  .corner.tr{top:0; right:0; transform:scaleX(-1);}
+  .corner.bl{bottom:0; left:0; transform:scaleY(-1);}
+  .corner.br{bottom:0; right:0; transform:scale(-1,-1);}
+
+  .hosts{display:flex; justify-content:space-between; gap:16px; font-family:'Montserrat',sans-serif; font-size:.68rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink); opacity:.85; margin-bottom:34px; position:relative; z-index:2;}
+  .hosts div{flex:1; line-height:1.6;}
+  .hosts .r{text-align:right;}
+
+  .honor{text-align:center; font-family:'Montserrat',sans-serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; margin-bottom:18px; position:relative; z-index:2;}
+
+  .names-block{text-align:center; margin-bottom:28px; position:relative; z-index:2; padding:34px 0;}
+  .names-block .monogram{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:250px; height:250px; opacity:.16; z-index:1; pointer-events:none;}
+  .names-block .name-script{position:relative; z-index:2; font-family:'Pinyon Script', cursive; font-size:3.6rem; color:var(--ink); line-height:1.1;}
+
+  .divider{display:flex; align-items:center; justify-content:center; gap:14px; margin:26px 0; position:relative; z-index:2;}
+  .divider .line{height:1px; width:60px; background:var(--gold);}
+  .divider svg{width:46px; height:28px;}
+
+  .event-title{text-align:center; font-family:'Montserrat',sans-serif; font-size:.78rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; position:relative; z-index:2;}
+  .event-main{text-align:center; font-family:'Playfair Display', serif; font-size:1.7rem; margin-bottom:6px; position:relative; z-index:2;}
+  .event-sub{text-align:center; font-size:1.15rem; margin-bottom:4px; position:relative; z-index:2;}
+  .event-loc{text-align:center; font-size:1.05rem; opacity:.85; margin-bottom:4px; position:relative; z-index:2;}
+  .event-loc .loc-link{color:inherit; text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:3px;}
+
+  .ics-btn{
+    display:block; width:fit-content; margin:24px auto 0; text-decoration:none;
+    font-family:'Montserrat',sans-serif; letter-spacing:.14em; text-transform:uppercase; font-size:.66rem;
+    color:var(--ink); border:1px solid var(--ink); padding:10px 22px; position:relative; z-index:2;
+    transition:background .3s ease, color .3s ease;
+  }
+  .ics-btn:hover{background:var(--ink); color:#fff;}
+
+  .cocktail{text-align:center; font-family:'Montserrat',sans-serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-top:22px; position:relative; z-index:2;}
+
+  .kids-note{text-align:center; font-style:italic; font-size:.92rem; opacity:.75; margin-top:28px; padding-top:18px; border-top:1px solid var(--gold-light); position:relative; z-index:2;}
+
+  .countdown{display:flex; justify-content:center; gap:18px; margin:30px 0 6px; position:relative; z-index:2;}
+  .countdown div{text-align:center;}
+  .countdown .num{font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold);}
+  .countdown .lbl{font-family:'Montserrat',sans-serif; font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; opacity:.7;}
+
+  /* RSVP card */
+  .rsvp-title{text-align:center; font-family:'Playfair Display', serif; font-size:1.6rem; margin-bottom:12px; position:relative; z-index:2;}
+  .rsvp-text{text-align:center; font-size:1.02rem; opacity:.85; margin-bottom:28px; position:relative; z-index:2;}
+  .rsvp-btn{
+    display:block; width:fit-content; margin:0 auto; text-decoration:none;
+    font-family:'Montserrat',sans-serif; letter-spacing:.18em; text-transform:uppercase; font-size:.75rem;
+    color:#fff; background:var(--ink); padding:16px 38px; position:relative; z-index:2;
+    transition:background .3s ease, color .3s ease;
+  }
+  .rsvp-btn:hover{background:var(--gold); color:var(--ink);}
+
+  footer{text-align:center; padding:40px 20px 60px; font-family:'Pinyon Script',cursive; font-size:1.6rem; color:var(--gold); opacity:.85;}
+  footer .foot-monogram{display:block; width:34px; height:20px; margin:0 auto 12px;}
+
+  @media(max-width:640px){
+    .card{margin:28px 14px; padding:50px 20px;}
+    .names-block .name-script{font-size:2.6rem;}
+    .names-block .monogram{width:160px; height:160px;}
+    .corner{width:72px; height:72px;}
+    #cover .names{font-size:3.1rem;}
+    #cover .cover-monogram{width:76px; height:76px;}
+    .countdown{gap:10px;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="ns-monogram" viewBox="0 0 230 230">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke-width="5" d="M164 86 C157 67 115 65 106 85 C94 111 161 111 160 139 C159 165 112 174 94 151"/>
+      <path stroke-width="5" d="M72 155 L72 75 L99 105 M113 120 L145 155 L145 75"/>
+      <path stroke-width="2" d="M60 155 H84 M60 75 H72 M134 75 H157"/>
+    </g>
+  </symbol>
+  <symbol id="floral-corner" viewBox="0 0 140 140">
+    <path d="M8,8 C8,8 8,50 8,70 C8,95 25,115 50,120" fill="none" stroke="#c9a646" stroke-width="1.2" opacity=".85"/>
+    <path d="M8,8 C8,8 50,8 70,8 C95,8 115,25 120,50" fill="none" stroke="#c9a646" stroke-width="1.2" opacity=".85"/>
+    <path d="M8,8 L8,22 M8,8 L22,8" stroke="#c9a646" stroke-width="1" opacity=".6"/>
+    <ellipse cx="34" cy="20" rx="10" ry="4" fill="#c9a646" opacity=".3" transform="rotate(-30 34 20)"/>
+    <ellipse cx="20" cy="34" rx="10" ry="4" fill="#c9a646" opacity=".3" transform="rotate(60 20 34)"/>
+    <ellipse cx="55" cy="35" rx="12" ry="5" fill="#c9a646" opacity=".25" transform="rotate(-15 55 35)"/>
+    <ellipse cx="42" cy="55" rx="9" ry="4" fill="#c9a646" opacity=".25" transform="rotate(40 42 55)"/>
+    <circle cx="45" cy="26" r="9" fill="#c9a646" opacity=".9"/>
+    <circle cx="45" cy="26" r="5.5" fill="#e8d9af"/>
+    <circle cx="45" cy="26" r="2.4" fill="#ffffff"/>
+    <circle cx="26" cy="45" r="7" fill="#c9a646" opacity=".65"/>
+    <circle cx="26" cy="45" r="3.6" fill="#e8d9af"/>
+    <circle cx="60" cy="50" r="5" fill="#c9a646" opacity=".5"/>
+    <circle cx="60" cy="50" r="2.2" fill="#e8d9af"/>
+    <circle cx="18" cy="60" r="4" fill="#c9a646" opacity=".55"/>
+    <circle cx="68" cy="22" r="3" fill="#c9a646" opacity=".5"/>
+    <circle cx="14" cy="80" r="3.2" fill="#c9a646" opacity=".45"/>
+  </symbol>
+  <symbol id="ornament-rings" viewBox="0 0 60 36">
+    <circle cx="22" cy="18" r="13" fill="none" stroke="#c9a646" stroke-width="2"/>
+    <circle cx="38" cy="18" r="13" fill="none" stroke="#c9a646" stroke-width="2"/>
+  </symbol>
+</svg>
+
+<div id="cover">
+  <svg class="cover-monogram" viewBox="0 0 230 230" aria-hidden="true" focusable="false">
+    <circle cx="115" cy="115" r="106" fill="none" stroke="#e8d9af" stroke-width="1.4" opacity=".75"/>
+    <use href="#ns-monogram" xlink:href="#ns-monogram" xmlns:xlink="http://www.w3.org/1999/xlink" style="color:#e8d9af"/>
+  </svg>
+  <div class="names">Nina &amp; Samuel</div>
+  <div class="sub">13 Décembre 2026 · Paris</div>
+  <a id="openBtn" href="#cover">Ouvrir l'invitation</a>
+</div>
+
+<button id="musicToggle" type="button" aria-label="Musique" aria-controls="musicPanel" aria-expanded="false">♪</button>
+<div id="musicPanel" aria-hidden="true" inert>
+  <div id="spotify-player"></div>
+  <a href="https://open.spotify.com/track/79KIMUAkOLIREcEy859KSh" target="_blank" rel="noopener">Écouter September sur Spotify</a>
+</div>
+
+<main>
+  <section class="card">
+    <svg class="corner tl"><use href="#floral-corner"/></svg>
+    <svg class="corner tr"><use href="#floral-corner"/></svg>
+    <svg class="corner bl"><use href="#floral-corner"/></svg>
+    <svg class="corner br"><use href="#floral-corner"/></svg>
+
+    <div class="hosts">
+      <div>Yves et Lysiane<br>Zeitoun</div>
+      <div class="r">Laurence et Marc Tubiana<br>Jacqueline Tubiana<br>Liliane Lahmi</div>
+    </div>
+
+    <div class="honor">Ont l'immense honneur de vous inviter au mariage de :</div>
+
+    <div class="names-block">
+      <svg class="monogram" viewBox="0 0 230 230" aria-hidden="true" focusable="false">
+        <circle cx="115" cy="115" r="108" fill="none" stroke="#c9a646" stroke-width="1" opacity=".55"/>
+        <use href="#ns-monogram" xlink:href="#ns-monogram" xmlns:xlink="http://www.w3.org/1999/xlink" style="color:#c9a646"/>
+      </svg>
+      <div class="name-script">Nina &amp; Samuel</div>
+    </div>
+
+    <div class="divider"><span class="line"></span><svg><use href="#ornament-rings"/></svg><span class="line"></span></div>
+
+    <div class="event-title">Houppa</div>
+    <div class="event-main">Le 13 Décembre 2026</div>
+    <div class="event-sub">À 13 heures</div>
+    <div class="event-loc"><a href="https://maps.google.com/?q=Salons+Hoche,+9+Avenue+Hoche,+75008+Paris" target="_blank" rel="noopener" class="loc-link">Salons Hoche · 9 Avenue Hoche, 75008 Paris</a></div>
+
+    <div class="cocktail">Suivi d'un cocktail déjeunatoire</div>
+
+    <div class="countdown">
+      <div><div class="num" id="cd-days">–</div><div class="lbl">Jours</div></div>
+      <div><div class="num" id="cd-hours">–</div><div class="lbl">Heures</div></div>
+      <div><div class="num" id="cd-min">–</div><div class="lbl">Min</div></div>
+      <div><div class="num" id="cd-sec">–</div><div class="lbl">Sec</div></div>
+    </div>
+
+    <a id="icsLink" class="ics-btn" href="#">+ Ajouter à mon agenda</a>
+
+    <div class="kids-note">Afin de profiter pleinement de cette journée en toute convivialité, celle-ci est réservée aux adultes — merci de votre compréhension.</div>
+  </section>
+
+  <section class="card">
+    <svg class="corner tl"><use href="#floral-corner"/></svg>
+    <svg class="corner tr"><use href="#floral-corner"/></svg>
+    <svg class="corner bl"><use href="#floral-corner"/></svg>
+    <svg class="corner br"><use href="#floral-corner"/></svg>
+
+    <div class="rsvp-title">Confirmez votre présence</div>
+    <div class="rsvp-text">Merci de répondre avant le 22 Novembre 2026,<br>en indiquant vos nom, prénom et le nombre de personnes (adultes).</div>
+
+    <a id="rsvpLink" class="rsvp-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeuqtNuhDGHTpOccFN5jZWwVKa08BMi0xnc-Bo6-T-KlAMiSA/viewform?usp=header" target="_blank" rel="noopener">Répondre au RSVP</a>
+  </section>
+
+  <footer>
+    <svg class="foot-monogram" viewBox="0 0 60 36" aria-hidden="true"><use href="#ornament-rings"/></svg>
+    Nina &amp; Samuel
+  </footer>
+</main>
+
+<script>
+  // ---------- MUSIQUE (September, lecteur Spotify) ----------
+  const musicToggle = document.getElementById('musicToggle');
+  const musicPanel = document.getElementById('musicPanel');
+  let spotifyPlayer;
+  musicToggle.addEventListener('click', () => {
+    const show = musicToggle.getAttribute('aria-expanded') === 'false';
+    musicToggle.setAttribute('aria-expanded', String(show));
+    musicPanel.setAttribute('aria-hidden', String(!show));
+    musicPanel.toggleAttribute('inert', !show);
+  });
+
+  document.getElementById('openBtn').addEventListener('click', () => {
+    if (spotifyPlayer) spotifyPlayer.play();
+  });
+
+  window.onSpotifyIframeApiReady = (api) => {
+    api.createController(document.getElementById('spotify-player'), {
+      uri: 'spotify:track:79KIMUAkOLIREcEy859KSh',
+      width: '100%',
+      height: 152
+    }, (controller) => {
+      controller.addListener('ready', () => { spotifyPlayer = controller; });
+    });
+  };
+
+  // ---------- AJOUTER A L'AGENDA (.ics) ----------
+  (function(){
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Nina et Samuel//Mariage//FR',
+      'BEGIN:VEVENT',
+      'UID:mariage-nina-samuel-13122026@faire-part',
+      'DTSTAMP:20261109T000000Z',
+      'DTSTART:20261213T120000Z',
+      'DTEND:20261213T160000Z',
+      'SUMMARY:Mariage de Nina & Samuel',
+      'DESCRIPTION:Houppa à 13h suivie d\'un cocktail déjeunatoire.',
+      'LOCATION:Salons Hoche\\, 9 Avenue Hoche\\, 75008 Paris',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.getElementById('icsLink');
+    link.href = url;
+    link.setAttribute('download', 'mariage-nina-samuel.ics');
+  })();
+
+  // ---------- COUNTDOWN ----------
+  const target = new Date('2026-12-13T13:00:00+01:00').getTime();
+  function tick(){
+    const now = Date.now();
+    let diff = Math.max(0, target - now);
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = d;
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-min').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-sec').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+</body>
+</html>
