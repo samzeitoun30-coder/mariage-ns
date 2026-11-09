@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mariage Nina & Sam</title>
 <meta property="og:title" content="Mariage N&amp;S 💍">
-<meta property="og:description" content="Houppa le 13 Décembre 2026 à 13h · Salons Hoche, Paris · Suivi d'un cocktail">
+<meta property="og:description" content="Houppa le 13 Décembre 2026 à 12 h 30 · Salons Hoche, Paris · Suivi d'un cocktail">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://samzeitoun30-coder.github.io/mariage-ns/">
 <meta property="og:image" content="https://samzeitoun30-coder.github.io/mariage-ns/apercu-mariage-rose.jpg">
@@ -14,7 +14,7 @@
 <meta property="og:image:alt" content="Mariage N&amp;S 💍, monogramme N/S">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mariage N&amp;S 💍">
-<meta name="twitter:description" content="Houppa le 13 Décembre 2026 à 13h · Salons Hoche, Paris">
+<meta name="twitter:description" content="Houppa le 13 Décembre 2026 à 12 h 30 · Salons Hoche, Paris">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&family=Pinyon+Script&display=swap');
   :root{
@@ -123,7 +123,7 @@
   }
   .ics-btn:hover{background:var(--ink); color:#fff;}
 
-  .remembrance{text-align:center; font-size:1.08rem; line-height:1.55; margin:24px auto 0; max-width:32rem; position:relative; z-index:2;}
+  .remembrance{text-align:center; font-size:.94rem; line-height:1.5; margin:24px auto 0; max-width:32rem; position:relative; z-index:2;}
   .cocktail{text-align:center; font-family:'Montserrat',sans-serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-top:22px; position:relative; z-index:2;}
 
   .kids-note{text-align:center; font-style:italic; font-size:.92rem; opacity:.75; margin-top:28px; padding-top:18px; border-top:1px solid var(--gold-light); position:relative; z-index:2;}
@@ -206,7 +206,7 @@
 <button id="musicToggle" type="button" aria-label="Musique" aria-controls="musicPanel" aria-expanded="false">♪</button>
 <div id="musicPanel" aria-hidden="true" inert>
   <div id="spotify-player"></div>
-  <a href="https://open.spotify.com/track/7cl8gD76eeSFxivbcnxraq" target="_blank" rel="noopener">Écouter You Are the Sunshine of My Life sur Spotify</a>
+  <a href="https://open.spotify.com/track/6RNDeRnWsRMjPdNVgupZCs" target="_blank" rel="noopener">Écouter I Just Called to Say I Love You sur Spotify</a>
 </div>
 
 <main>
@@ -235,12 +235,10 @@
 
     <div class="event-title">Houppa</div>
     <div class="event-main">Le 13 Décembre 2026</div>
-    <div class="event-sub">À 13 heures</div>
+    <div class="event-sub">À 12 h 30</div>
     <div class="event-loc"><a href="https://maps.google.com/?q=Salons+Hoche,+9+Avenue+Hoche,+75008+Paris" target="_blank" rel="noopener" class="loc-link">Salons Hoche · 9 Avenue Hoche, 75008 Paris</a></div>
 
     <div class="cocktail">Suivi d'un cocktail</div>
-
-    <p class="remembrance"><em>En ce jour de bonheur et de bénédiction, une pensée émue à la mémoire de nos grands-parents</em> Pépé Édouard, Pépé Vanvan, Mamie Claudine, Papi Albert, Mamie Gilberte et Pépé Joseph, <em>ainsi qu’à celle de notre tante</em> Irène.</p>
 
     <div class="countdown">
       <div><div class="num" id="cd-days">–</div><div class="lbl">Jours</div></div>
@@ -252,6 +250,8 @@
     <a id="icsLink" class="ics-btn" href="#">+ Ajouter à mon agenda</a>
 
     <div class="kids-note">Afin de profiter pleinement de cette journée en toute convivialité, celle-ci est réservée aux adultes — merci de votre compréhension.</div>
+
+    <p class="remembrance"><em>En ce jour de bonheur et de bénédiction, une pensée émue à la mémoire de nos grands-parents</em> Pépé Édouard, Pépé Vanvan, Mamie Claudine, Papi Albert, Mamie Gilberte et Pépé Joseph, <em>ainsi qu’à celle de nos tantes</em> Irène et Tata Michelle.</p>
   </section>
 
   <section class="card">
@@ -273,7 +273,7 @@
 </main>
 
 <script>
-  // ---------- MUSIQUE (You Are the Sunshine of My Life, lecteur Spotify) ----------
+  // ---------- MUSIQUE (I Just Called to Say I Love You, lecteur Spotify) ----------
   const musicToggle = document.getElementById('musicToggle');
   const musicPanel = document.getElementById('musicPanel');
   let spotifyPlayer;
@@ -290,7 +290,7 @@
 
   window.onSpotifyIframeApiReady = (api) => {
     api.createController(document.getElementById('spotify-player'), {
-      uri: 'spotify:track:7cl8gD76eeSFxivbcnxraq',
+      uri: 'spotify:track:6RNDeRnWsRMjPdNVgupZCs',
       width: '100%',
       height: 152
     }, (controller) => {
@@ -307,10 +307,10 @@
       'BEGIN:VEVENT',
       'UID:mariage-nina-samuel-13122026@faire-part',
       'DTSTAMP:20261109T000000Z',
-      'DTSTART:20261213T120000Z',
+      'DTSTART:20261213T113000Z',
       'DTEND:20261213T160000Z',
       'SUMMARY:Mariage de Nina & Samuel',
-      'DESCRIPTION:Houppa à 13h suivie d\'un cocktail.',
+      'DESCRIPTION:Houppa à 12 h 30 suivie d\'un cocktail.',
       'LOCATION:Salons Hoche\\, 9 Avenue Hoche\\, 75008 Paris',
       'END:VEVENT',
       'END:VCALENDAR'
@@ -323,7 +323,7 @@
   })();
 
   // ---------- COUNTDOWN ----------
-  const target = new Date('2026-12-13T13:00:00+01:00').getTime();
+  const target = new Date('2026-12-13T12:30:00+01:00').getTime();
   function tick(){
     const now = Date.now();
     let diff = Math.max(0, target - now);
