@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mariage Nina & Sam</title>
-<meta property="og:title" content="Mariage Nina & Sam">
-<meta property="og:description" content="Houppa le 13 Décembre 2026 à 13h · Salons Hoche, Paris · Suivi d'un cocktail déjeunatoire">
+<meta property="og:title" content="Mariage N&amp;S 💍">
+<meta property="og:description" content="Houppa le 13 Décembre 2026 à 13h · Salons Hoche, Paris · Suivi d'un cocktail">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://samzeitoun30-coder.github.io/mariage-ns/">
-<meta property="og:image" content="https://samzeitoun30-coder.github.io/mariage-ns/apercu-mariage.png">
+<meta property="og:image" content="https://samzeitoun30-coder.github.io/mariage-ns/apercu-mariage-rose.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Mariage Nina &amp; Sam, monogramme N/S">
+<meta property="og:image:alt" content="Mariage N&amp;S 💍, monogramme N/S">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mariage Nina & Sam">
+<meta name="twitter:title" content="Mariage N&amp;S 💍">
 <meta name="twitter:description" content="Houppa le 13 Décembre 2026 à 13h · Salons Hoche, Paris">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&family=Pinyon+Script&display=swap');
@@ -40,20 +40,20 @@
   #cover{
     position:fixed; inset:0; z-index:50;
     display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
-    background:linear-gradient(160deg, #2a241c 0%, #17140f 60%, #0d0b08 100%);
+    background:linear-gradient(160deg, #fff8f9 0%, #f9e9ed 60%, #f3dce3 100%);
     background-size:cover; background-position:center 30%;
-    text-align:center; color:#fff; padding:60px 24px 56px;
+    text-align:center; color:#52383d; padding:60px 24px 56px;
     transition:opacity .8s ease, visibility .8s ease;
   }
   #cover:target{opacity:0; visibility:hidden; pointer-events:none;}
   #cover::before{content:''; position:absolute; inset:26px; border:1px solid rgba(201,166,70,.55); pointer-events:none;}
   #cover::after{content:''; position:absolute; inset:38px; border:1px solid rgba(201,166,70,.28); pointer-events:none;}
   #cover .cover-monogram{width:96px; height:96px; margin-bottom:16px; opacity:.92;}
-  #cover .names{font-family:'Pinyon Script', cursive; font-size:4.6rem; line-height:1; margin-bottom:10px; text-shadow:0 2px 18px rgba(0,0,0,.4);}
+  #cover .names{font-family:'Pinyon Script', cursive; font-size:4.6rem; line-height:1; margin-bottom:10px;}
   #cover .sub{font-family:'Montserrat',sans-serif; letter-spacing:.3em; text-transform:uppercase; font-size:.75rem; opacity:.9; margin-bottom:34px;}
   #openBtn{
     font-family:'Montserrat',sans-serif; letter-spacing:.2em; text-transform:uppercase; font-size:.72rem;
-    background:transparent; color:#fff; border:1px solid rgba(255,255,255,.8); padding:14px 34px; cursor:pointer;
+    background:transparent; color:#52383d; border:1px solid #946a37; padding:14px 34px; cursor:pointer;
     transition:background .3s ease; touch-action:manipulation; -webkit-tap-highlight-color:transparent;
     position:relative; z-index:5; display:inline-block; text-decoration:none;
   }
@@ -123,6 +123,7 @@
   }
   .ics-btn:hover{background:var(--ink); color:#fff;}
 
+  .remembrance{text-align:center; font-size:1.08rem; line-height:1.55; margin:24px auto 0; max-width:32rem; position:relative; z-index:2;}
   .cocktail{text-align:center; font-family:'Montserrat',sans-serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-top:22px; position:relative; z-index:2;}
 
   .kids-note{text-align:center; font-style:italic; font-size:.92rem; opacity:.75; margin-top:28px; padding-top:18px; border-top:1px solid var(--gold-light); position:relative; z-index:2;}
@@ -194,8 +195,8 @@
 
 <div id="cover">
   <svg class="cover-monogram" viewBox="0 0 230 230" aria-hidden="true" focusable="false">
-    <circle cx="115" cy="115" r="106" fill="none" stroke="#e8d9af" stroke-width="1.4" opacity=".75"/>
-    <use href="#ns-monogram" xlink:href="#ns-monogram" xmlns:xlink="http://www.w3.org/1999/xlink" style="color:#e8d9af"/>
+    <circle cx="115" cy="115" r="106" fill="none" stroke="#946a37" stroke-width="1.4" opacity=".75"/>
+    <use href="#ns-monogram" xlink:href="#ns-monogram" xmlns:xlink="http://www.w3.org/1999/xlink" style="color:#946a37"/>
   </svg>
   <div class="names">Nina &amp; Samuel</div>
   <div class="sub">13 Décembre 2026 · Paris</div>
@@ -205,7 +206,7 @@
 <button id="musicToggle" type="button" aria-label="Musique" aria-controls="musicPanel" aria-expanded="false">♪</button>
 <div id="musicPanel" aria-hidden="true" inert>
   <div id="spotify-player"></div>
-  <a href="https://open.spotify.com/track/79KIMUAkOLIREcEy859KSh" target="_blank" rel="noopener">Écouter September sur Spotify</a>
+  <a href="https://open.spotify.com/track/7cl8gD76eeSFxivbcnxraq" target="_blank" rel="noopener">Écouter You Are the Sunshine of My Life sur Spotify</a>
 </div>
 
 <main>
@@ -216,7 +217,7 @@
     <svg class="corner br"><use href="#floral-corner"/></svg>
 
     <div class="hosts">
-      <div>Yves et Lysiane<br>Zeitoun</div>
+      <div>Lysiane et Yves<br>Zeitoun</div>
       <div class="r">Laurence et Marc Tubiana<br>Jacqueline Tubiana<br>Liliane Lahmi</div>
     </div>
 
@@ -237,7 +238,9 @@
     <div class="event-sub">À 13 heures</div>
     <div class="event-loc"><a href="https://maps.google.com/?q=Salons+Hoche,+9+Avenue+Hoche,+75008+Paris" target="_blank" rel="noopener" class="loc-link">Salons Hoche · 9 Avenue Hoche, 75008 Paris</a></div>
 
-    <div class="cocktail">Suivi d'un cocktail déjeunatoire</div>
+    <div class="cocktail">Suivi d'un cocktail</div>
+
+    <p class="remembrance"><em>En ce jour de bonheur et de bénédiction, une pensée émue à la mémoire de nos grands-parents</em> Pépé Édouard, Pépé Vanvan, Mamie Claudine, Papi Albert, Mamie Gilberte et Pépé Joseph, <em>ainsi qu’à celle de notre tante</em> Irène.</p>
 
     <div class="countdown">
       <div><div class="num" id="cd-days">–</div><div class="lbl">Jours</div></div>
@@ -258,7 +261,7 @@
     <svg class="corner br"><use href="#floral-corner"/></svg>
 
     <div class="rsvp-title">Confirmez votre présence</div>
-    <div class="rsvp-text">Merci de répondre avant le 22 Novembre 2026,<br>en indiquant vos nom, prénom et le nombre de personnes (adultes).</div>
+    <div class="rsvp-text">Merci de répondre dès réception,<br>en indiquant vos nom, prénom et le nombre de personnes (adultes).</div>
 
     <a id="rsvpLink" class="rsvp-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeuqtNuhDGHTpOccFN5jZWwVKa08BMi0xnc-Bo6-T-KlAMiSA/viewform?usp=header" target="_blank" rel="noopener">Répondre au RSVP</a>
   </section>
@@ -270,7 +273,7 @@
 </main>
 
 <script>
-  // ---------- MUSIQUE (September, lecteur Spotify) ----------
+  // ---------- MUSIQUE (You Are the Sunshine of My Life, lecteur Spotify) ----------
   const musicToggle = document.getElementById('musicToggle');
   const musicPanel = document.getElementById('musicPanel');
   let spotifyPlayer;
@@ -287,7 +290,7 @@
 
   window.onSpotifyIframeApiReady = (api) => {
     api.createController(document.getElementById('spotify-player'), {
-      uri: 'spotify:track:79KIMUAkOLIREcEy859KSh',
+      uri: 'spotify:track:7cl8gD76eeSFxivbcnxraq',
       width: '100%',
       height: 152
     }, (controller) => {
@@ -307,7 +310,7 @@
       'DTSTART:20261213T120000Z',
       'DTEND:20261213T160000Z',
       'SUMMARY:Mariage de Nina & Samuel',
-      'DESCRIPTION:Houppa à 13h suivie d\'un cocktail déjeunatoire.',
+      'DESCRIPTION:Houppa à 13h suivie d\'un cocktail.',
       'LOCATION:Salons Hoche\\, 9 Avenue Hoche\\, 75008 Paris',
       'END:VEVENT',
       'END:VCALENDAR'
